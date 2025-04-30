@@ -11,27 +11,31 @@ def run():
     st.text("")
     userinput = st.text_input('Enter text below, then click the Predict button.', placeholder='Input text HERE')
     st.text("")
-    
-    # Initialize session state for both images
+
+    # Initialize session state
     if "show_image1" not in st.session_state:
         st.session_state.show_image1 = False
     if "show_image2" not in st.session_state:
         st.session_state.show_image2 = False
     
-    # Button for first image
-    if st.button("Meme 1"):
-        st.session_state.show_image1 = not st.session_state.show_image1
+    # Create two columns
+    col1, col2 = st.columns(2)
     
-    # Button for second image
-    if st.button("Meme 2"):
-        st.session_state.show_image2 = not st.session_state.show_image2
+    # Column 1: Button and Image 1
+    with col1:
+        if st.button("Toggle Image 1"):
+            st.session_state.show_image1 = not st.session_state.show_image1
     
-    # Show images conditionally
-    if st.session_state.show_image1:
-        st.image("https://www.theinsaneapp.com/wp-content/uploads/2024/10/Data-Science-Meme-7.png", caption = 'Meme')
+        if st.session_state.show_image1:
+            st.image("https://www.theinsaneapp.com/wp-content/uploads/2024/10/Data-Science-Meme-7.png", caption="Image 1", use_column_width=True)
     
-    if st.session_state.show_image2:
-        st.image("https://www.atoti.io/wp-content/uploads/2024/06/1_t4zCD60p-dDd5BRmINW9tQ.webp", caption = 'Meme')
+    # Column 2: Button and Image 2
+    with col2:
+        if st.button("Toggle Image 2"):
+            st.session_state.show_image2 = not st.session_state.show_image2
+    
+        if st.session_state.show_image2:
+            st.image("https://www.atoti.io/wp-content/uploads/2024/06/1_t4zCD60p-dDd5BRmINW9tQ.webp", caption="Image 2", use_column_width=True)
 
     predicted_sentiment = ""
     if st.button("Predict"):
