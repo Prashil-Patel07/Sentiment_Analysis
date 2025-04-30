@@ -19,11 +19,11 @@ def run():
         st.session_state.show_image2 = False
     
     # Button for first image
-    if st.button("Toggle Image 1"):
+    if st.button("Meme 1"):
         st.session_state.show_image1 = not st.session_state.show_image1
     
     # Button for second image
-    if st.button("Toggle Image 2"):
+    if st.button("Meme 2"):
         st.session_state.show_image2 = not st.session_state.show_image2
     
     # Show images conditionally
