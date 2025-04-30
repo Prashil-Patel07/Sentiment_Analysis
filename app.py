@@ -18,7 +18,7 @@ def run():
         st.session_state.show_image = not st.session_state.show_image
 
     if st.session_state.show_image:
-        st.image("https://www.atoti.io/wp-content/uploads/2024/06/1_t4zCD60p-dDd5BRmINW9tQ.webp")
+        st.image("https://www.atoti.io/wp-content/uploads/2024/06/1_t4zCD60p-dDd5BRmINW9tQ.webp", caption = 'Meme')
 
     if "show_image" not in st.session_state:
         st.session_state.show_image = False
@@ -27,7 +27,7 @@ def run():
         st.session_state.show_image = not st.session_state.show_image
 
     if st.session_state.show_image:
-        st.image("https://www.theinsaneapp.com/wp-content/uploads/2024/10/Data-Science-Meme-7.png")
+        st.image("https://www.theinsaneapp.com/wp-content/uploads/2024/10/Data-Science-Meme-7.png", caption = 'Meme')
 
     predicted_sentiment = ""
     if st.button("Predict"):
