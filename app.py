@@ -11,8 +11,6 @@ def run():
     st.text("")
     userinput = st.text_input('Enter text below, then click the Predict button.', placeholder='Input text HERE')
     st.text("")
-
-    import streamlit as st
     
     # Initialize session state for both images
     if "show_image1" not in st.session_state:
